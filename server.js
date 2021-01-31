@@ -58,3 +58,4 @@ require('./app/routes/adminStock.routes')(app);
 require('./app/routes/adminMutualFund.routes')(app);
 require('./app/routes/user.routes.js')(app);
 require('./app/routes/filterMutualFund.routes')(app);
+require('./app/routes/cartMutualFund.routes.js')(app)
