@@ -3,7 +3,6 @@ const multer = require('multer');
 
 
 exports.create = (req, res) => {
-console.log(req.body);
     const adminStock = new AdminStock({
 
         stockName: req.body.stockName,

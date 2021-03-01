@@ -145,7 +145,6 @@ exports.findOneByName = (req, res) => {
             });            
         }
         res.send(adminMutualFund);
-        console.log(adminMutualFund);
     }).catch(err => {
         if(err.kind === 'ObjectId') {
             return res.status(404).send({
