@@ -18,10 +18,6 @@ app.get('/',verify, (req, res) => {
     res.json({"message": "Welcome"});
 });
 
-// app.get('/' ,(req, res) => {
-//     res.json({"message": "Welcome"});
-// });
-
 app.listen(4000, () => {
     console.log("Server is listening on port 4000");
 });
@@ -58,4 +54,5 @@ require('./app/routes/adminStock.routes')(app);
 require('./app/routes/adminMutualFund.routes')(app);
 require('./app/routes/user.routes.js')(app);
 require('./app/routes/filterMutualFund.routes')(app);
-require('./app/routes/cart.routes.js')(app)
+require('./app/routes/cart.routes.js')(app);
+require('./app/routes/investments_MF.routes.js')(app);

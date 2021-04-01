@@ -9,7 +9,7 @@ const cart = mongoose.Schema({
         type:String,
         required: true
     }
-},{
+},{ 
     timestamps: true
 })
 

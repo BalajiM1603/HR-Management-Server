@@ -3,5 +3,5 @@ module.exports = (app) => {
 
     app.post('/api/data/cart',Cart.findOne);
     app.get('/user/cart',Cart.list);
-    app.delete('/user/cart',Cart.remove);
+    app.post('/user/cart',Cart.remove);
 }

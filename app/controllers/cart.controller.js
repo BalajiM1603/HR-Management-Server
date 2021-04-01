@@ -44,28 +44,34 @@ exports.findOne = (req,res) => {
 }
 
 
-exports.list = (req, res) => {
-    Cart.findOne({"userId": req.query.userId})
-    .then(cartContent => {
-        res.send(cartContent);
-        console.log(cartContent);
-    }).catch(err => {
+exports.list = async(req, res) => {
+    try {
+        Cart.findOne({"userId": req.query.userId})
+        .then(cartContent => {
+            res.send(cartContent);
+        })
+    } catch {
         res.status(500).send({
             message: err.message || "Error"
         });
-    });
+    }
 };
 
 
-exports.remove = (req,res) => {
-    Cart.findOne({"userId":req.query.userId}).findOneAndDelete({_id:req.query.objectId})
-    .then(Cart => {
-        res.send(200).json(Cart);
-    }).catch(err => {
-        res.status(500).send({
-            message: err.message || "Error"
+exports.remove = async(req,res) => {
+    let fundId = req.body.map(e =>{
+        return ObjectID(e)
+    })    
+    try {
+        let data = await Cart.findOneAndUpdate({"userId":req.query.userId},{"$pull":{"funds":{"_id":{"$in":fundId}}}})
+        res.status(200).send({
+            message:"Deleted"
+        })
+    } catch (error) {
+        res.status(400).send({
+            message: error.message || "Error"
         });
-    });
+    }
 }
 
 

@@ -24,6 +24,7 @@ router.post('/register', async (req, res) => {
         role:req.body.role,
         password:hashPassword
     })
+    console.log(user);
     try {
         const savedUser = await user.save();
         res.status(200).json("User Added Successfully. Login to continue.")
