@@ -38,12 +38,11 @@ exports.AddInvest = (req,res) => {
                     invested += Number(mutualFunds[i].investedValue);
                 }
                 var totalInvested = invested + Number(req.body.amount);
-                console.log(totalInvested);
+            
                 try {
                     Investments.updateMany(
-                        {"userId": req.body.userId},
-                        { "$push": { "mutualFunds": { "fundName": req.body.fundName , "nav": req.body.nav, "investedValue": req.body.amount, "units" : units}}},
-                        {"totalInvestedValue" : totalInvested }
+                        { "userId": req.body.userId},
+                        { "totalInvestedValue" : totalInvested, "$push": { "mutualFunds": { "fundName": req.body.fundName , "nav": req.body.nav, "investedValue": req.body.amount, "units" : units}} }                   
                     )
                     .then(data => {
                         res.status(200).json("Fund Started for SIP")
