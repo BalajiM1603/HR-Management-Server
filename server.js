@@ -57,3 +57,4 @@ require('./app/routes/filterMutualFund.routes')(app);
 require('./app/routes/cart.routes.js')(app);
 require('./app/routes/watchlist_mf.routes.js')(app);
 require('./app/routes/investments_MF.routes.js')(app);
+require('./app/routes/adminDivision.routes.js')(app);

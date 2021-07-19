@@ -4,7 +4,6 @@ const multer = require('multer');
 
 exports.create = (req, res) => {
     const adminStock = new AdminStock({
-
         stockName: req.body.stockName,
         marketCap: req.body.marketCap,
         peRatio: req.body.peRatio,
@@ -18,7 +17,11 @@ exports.create = (req, res) => {
         organization: req.body.organization,
         foundedYear: req.body.foundedYear,
         managingDirector: req.body.managingDirector,
-        shareHoldingPattern: req.body.shareHoldingPattern,
+        promotorsShare:  req.body.promotorsShare,
+        foreignInstitutions:  req.body.foreignInstitutions,
+        retails:  req.body.retails,
+        mutualFunds:  req.body.mutualFunds,
+        domesticInstitutions:  req.body.domesticInstitutions,
         brandImg: req.body.brandImg,
         sector: req.body.sector,
         division: req.body.division,
@@ -56,7 +59,7 @@ exports.findOne = (req,res) => {
         if(!adminStock) {
             return res.status(400).json("stock not found");
         }
-        res.status(200).json({data:adminStock})
+        res.status(200).json(adminStock)
     })
     .catch(err => {
         res.status(500).json({
@@ -80,7 +83,11 @@ exports.update = (req, res) => {
         organization: req.body.organization,
         foundedYear: req.body.foundedYear,
         managingDirector: req.body.managingDirector,
-        shareHoldingPattern: req.body.shareHoldingPattern,
+        promotorsShare:  req.body.promotorsShare,
+        foreignInstitutions:  req.body.foreignInstitutions,
+        retails:  req.body.retails,
+        mutualFunds:  req.body.mutualFunds,
+        domesticInstitutions:  req.body.domesticInstitutions,
         brandImg: req.body.brandImg,
         sector: req.body.sector,
         division: req.body.division,

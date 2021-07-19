@@ -78,16 +78,6 @@ exports.remove = async(req,res) => {
 exports.findOneFund = async(req,res) => {
     console.log(req.query.userId);
     console.log(req.query.fundName);
-    // var jsonData = JSON.parse(req.query.fundName);
-    // var json = {};
-    // if (jsonData.funds.length > 0) {
-    //     json["funds"] = {
-    //         "fundName": {
-    //             "$in":jsonData.funds
-    //         }
-    //     }
-    // }
-    // console.log(json);
     try{
         const data = await Watchlist_MF.find({"userId":req.query.userId,"funds.fundName": req.query.fundName})
         console.log(data);
