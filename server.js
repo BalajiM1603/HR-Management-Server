@@ -49,12 +49,4 @@ mongoose.connect(dbConfig.url, {
     process.exit();
 });
 
-require('./app/routes/product.routes.js')(app);
-require('./app/routes/adminStock.routes')(app);
-require('./app/routes/adminMutualFund.routes')(app);
 require('./app/routes/user.routes.js')(app);
-require('./app/routes/filterMutualFund.routes')(app);
-require('./app/routes/cart.routes.js')(app);
-require('./app/routes/watchlist_mf.routes.js')(app);
-require('./app/routes/investments_MF.routes.js')(app);
-require('./app/routes/adminDivision.routes.js')(app);
