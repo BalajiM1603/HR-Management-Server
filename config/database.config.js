@@ -1,4 +1,4 @@
 module.exports = {
-    url: 'mongodb://localhost:27017'
+    url: 'mongodb+srv://venkat:demo1234@cluster0.6rmk0.mongodb.net/test'
 }
 
