@@ -14,7 +14,7 @@ exports.save = async(req,res) => {
         employeeID:req.body.employeeID,
         firstName:req.body.firstName,
         lastName:req.body.lastName,
-        email:req.body.emailId,
+        emailId:req.body.emailId,
         nickName: req.body.nickName,
         password: hashPassword,
         department : req.body.department,
@@ -107,7 +107,7 @@ exports.update = async(req,res) => {
             employeeID:req.body.employeeID,
             firstName:req.body.firstName,
             lastName:req.body.lastName,
-            email:req.body.emailId,
+            emailId:req.body.emailId,
             nickName: req.body.nickName,
             password: hashPassword,
             department : req.body.department,
@@ -152,6 +152,7 @@ exports.update = async(req,res) => {
 }
 
 exports.delete = (req,res) => {
+    console.log(req.query.userId);
     User.findByIdAndDelete(req.query.userId)
     .then(data => {
         res.status(200).json({msg:"User Deleted Successfully!"})
