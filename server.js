@@ -14,8 +14,8 @@ app.use(bodyParser.json())
 
 const verify = require('./app/Auth/verifytoken')
 
-app.get('/',verify, (req, res) => {
-    res.json({"message": "Welcome"});
+app.get('/', verify, (req, res) => {
+    res.json({ "message": "Welcome" });
 });
 
 app.listen(4000, () => {
@@ -29,7 +29,7 @@ app.listen(4000, () => {
 const authRoute = require('./app/Auth/auth')
 // Route Middleware
 
-app.use('/api/user',authRoute)
+app.use('/api/user', authRoute)
 
 const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
@@ -41,9 +41,9 @@ mongoose.connect(dbConfig.url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
-    useCreateIndex: true, 
+    useCreateIndex: true,
 }).then(() => {
-    console.log("Successfully connected to the database");    
+    console.log("Successfully connected to the database");
 }).catch(err => {
     console.log('Could not connect to the database. Exiting now...', err);
     process.exit();
@@ -56,3 +56,4 @@ require('./app/routes/designation.routes.js')(app);
 require('./app/routes/sourceOfHire.routes.js')(app);
 require('./app/routes/employmentType.routes.js')(app);
 require('./app/routes/leaveType.routes.js')(app);
+require('./app/routes/leaveApply.routes')(app);
