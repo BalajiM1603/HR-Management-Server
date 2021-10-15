@@ -55,3 +55,6 @@ require('./app/routes/location.routes.js')(app);
 require('./app/routes/designation.routes.js')(app);
 require('./app/routes/sourceOfHire.routes.js')(app);
 require('./app/routes/employmentType.routes.js')(app);
+require('./app/routes/clients.routes.js')(app);
+require('./app/routes/projects.routes.js')(app);
+require('./app/routes/jobs.routes.js')(app);

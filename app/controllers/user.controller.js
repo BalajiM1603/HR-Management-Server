@@ -45,15 +45,12 @@ exports.save = async(req,res) => {
         educationalDetails: req.body.educationalDetails,
         dependentDetails: req.body.dependentDetails,
     })
-    // console.log(user);
 
     user.save()
     .then(data => {
-        console.log(data);
         res.status(200).json({data:data,msg:"User Added Successfully!"});
     })
     .catch(err => {
-        console.log(err)
         res.status(500).json({
             message: err.message || "Error"
         })
