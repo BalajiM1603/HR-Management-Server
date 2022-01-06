@@ -5,7 +5,7 @@ const employmentTypeSchema = new mongoose.Schema({
         type: String,
         required: true
     }
-})
+})  
 
 
 
