@@ -57,7 +57,6 @@ exports.update = async (req, res) => {
 }
 
 exports.findOne = (req, res) => {
-    console.log(req, 'request')
     LeaveType.findById(req.query.leaveId)
         .then(leave => {
             if (!leave) {

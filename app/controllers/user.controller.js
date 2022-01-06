@@ -149,7 +149,6 @@ exports.update = async(req,res) => {
 }
 
 exports.delete = (req,res) => {
-    console.log(req.query.userId);
     User.findByIdAndDelete(req.query.userId)
     .then(data => {
         res.status(200).json({msg:"User Deleted Successfully!"})

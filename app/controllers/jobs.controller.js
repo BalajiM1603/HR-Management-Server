@@ -1,7 +1,6 @@
 const Job = require("../models/jobs.model");
 
 exports.save = async(req,res) => {
-    console.log(req.body);
     const job = new Job({
         jobName: req.body.jobName,
         project: req.body.project,
